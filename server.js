@@ -1,10 +1,11 @@
+//require npm packages
 var express = require('express');
 var bodyParser = require('body-parser');
-var methodOveride = require('method-overide');
+var methodOveride = require('method-override');
 var exphbs = require('express-handlebars');
 
 var app = express();
-app.use(express.static(_dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 
 app.use(bodyParser.urlencoded({
     extended: false
@@ -17,5 +18,9 @@ app.engine('handlebars', exphbs({
 
 app.set('view engine', 'handlebars');
 
-var port = 8889;
+var routes = require('./controllers/routes.js');
+
+app.use('/', routes);
+
+var port = 3000;
 app.listen(port);
