@@ -1,10 +1,7 @@
-SELECT * FROM burger_db.burgers;
+INSERT INTO burgers_db.burgers(burger_name, devoured)
+VALUES("hamburger", FALSE),
+	("Bison Burger", FALSE),
+	("Cheese Burger", FALSE);
 
-INSERT INTO burgers(burger_name, devoured)
-VALUES(hamburger, true),
-	("Bison Burger", true),
-	("Cheese Burger", true);
-    
-SELECT * FROM burger_db.burgers;
-
+SELECT * FROM burgers_db.burgers;
 
